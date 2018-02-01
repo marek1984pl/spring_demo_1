@@ -7,6 +7,18 @@
 package pl.poligro;
 
 public class RunningCoach implements Coach {
+
+    private FortuneService fortuneService;
+
+    public RunningCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
+    @Override
+    public String getDailyFortune() {
+        return "Just do it : " + fortuneService.getFortune();
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Run 3kms";
