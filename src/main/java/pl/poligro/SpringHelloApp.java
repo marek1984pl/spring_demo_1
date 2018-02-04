@@ -12,13 +12,17 @@ public class SpringHelloApp {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("file:src/applicationContext.xml");
         Coach theCoach = context.getBean("myCoach", Coach.class);
-        System.out.println(theCoach.getDailyWorkout());
-        System.out.println(theCoach.getDailyFortune());
+//        System.out.println(theCoach.getDailyWorkout());
+//        System.out.println(theCoach.getDailyFortune());
 
         // setter demo
         CricketCoach cricketCoach = context.getBean("myCricketCoach", CricketCoach.class);
         System.out.println(cricketCoach.getDailyWorkout());
         System.out.println(cricketCoach.getDailyFortune());
+
+        System.out.println(cricketCoach.getEmailAddress());
+        System.out.println(cricketCoach.getTeam());
+
         context.close();
     }
 }

@@ -20,6 +20,8 @@
     <bean id="myCricketCoach"
           class="pl.poligro.CricketCoach">
         <property name="fortuneService" ref="myFortune"/>
+        <property name="emailAddress" value="coach@fdsfdsf.pl"/>
+        <property name="team" value="Sunrisers"/>
     </bean>
 
 </beans>
