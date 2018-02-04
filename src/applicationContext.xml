@@ -7,9 +7,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="file:src/sport.properties"/>
 
     <bean id="myFortune"
-          class="pl.poligro.HappyFortuneService">
+          class="pl.poligro.RandomFortuneService">
     </bean>
 
     <bean id="myCoach"
@@ -20,8 +21,8 @@
     <bean id="myCricketCoach"
           class="pl.poligro.CricketCoach">
         <property name="fortuneService" ref="myFortune"/>
-        <property name="emailAddress" value="coach@fdsfdsf.pl"/>
-        <property name="team" value="Sunrisers"/>
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
     </bean>
 
 </beans>
